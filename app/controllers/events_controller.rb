@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
   def index
+    events_scraper
     @events = Event.all
 
     if params[:search]
@@ -11,10 +12,10 @@ class EventsController < ApplicationController
   private
 
   def events_scraper
-    @event_entries = []
+    require 'open-uri'
 
-    urls = %w[http://berghain.de/events/ 
-              https://www.co-berlin.org/en/calender]
+    @event_entries = []
+    urls           = %w[http://berghain.de/events/ https://www.co-berlin.org/en/calender]
     
     urls.each do |url|
       html_data = open(url)
