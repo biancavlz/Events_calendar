@@ -1,10 +1,10 @@
 class Event < ApplicationRecord
   
   def self.search_by(search_term)
-    where("LOWER(title) LIKE :search_term OR 
+    where("LOWER(title) LIKE :search_term OR
           LOWER(source) LIKE :search_term OR
-          LOWER(date) LIKE :search_term OR
-          LOWER(place) LIKE :search_term", 
+          CAST(date AS text) LIKE :search_term OR
+          LOWER(place) LIKE :search_term",
           search_term: "#{search_term.downcase}%")
   end
 end
