@@ -1,13 +1,43 @@
-<h1>Events</h1>
+<div class="container">
+  <div class="col-md-12 justify-content-center">
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-3">My Events Calender</h1>
+        <p class="lead">Here you will find out the next events presented in 
+          <i>CO-Berlin Foundation</i> and <i>Berghain / Panorama Bar</i>
+        </p>
+      </div>
+    </div>
+    </div>
+  
+  <%= form_for "", url: root_path, role: "search", method: :get do %>
+    <form>
+      <div class="form-group row justify-content-center align-items-center">
+        <label for="colFormLabelSm" class="search col-sm-2 col-form-label col-form-label-sm">
+          Search for an event
+        </label>
 
-<%= form_for "", url: root_path, role: "search", method: :get do %>
-  <%= text_field_tag :search, @search_term, placeholder: "Search an event" %>
-<% end %>
-
-<% @events.each do |event| %>
-  <p><%= event[:title] %></p>
-  <p><%= event[:date] %></p>
-  <p><%= event[:information] %></p>
-  <p><%= event[:place] %></p>
-  <p><%= event[:source] %></p>
-<% end %>
+        <div class="col-sm-6">
+          <%= text_field_tag :search, @search_term, class: "form-control", placeholder: "Type your search could be by title, date, source..." %>
+        </div>
+      </div>
+    </form>
+  <% end %>
+  
+  <% @events.each do |event| %>
+    <div class="row justify-content-center align-items-center">
+      <div class="col-md-8">
+        <div class="card">
+          <h5 class="card-header">Next event</h5>
+          <div class="card-body">
+            <h5 class="card-title"><%= event[:title] %></h5>
+            <p class="card-text">When: <%= event[:date] %></p>
+            <p class="card-text">Information: <%= event[:information] %></p>
+            <p class="card-text">Where: <%= event[:place] %></p>
+            <a href= <%= event[:source] %> class="btn btn-primary">More info to the website</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

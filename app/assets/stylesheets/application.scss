@@ -14,3 +14,19 @@
  *= require_tree .
  *= require_self
  */
+
+ .jumbotron {
+  padding: 20px;
+  text-align: center;
+ }
+
+ .card {
+  margin-bottom: 20px;
+    .card-title {
+      font-size: 2rem;
+    }
+ }
+
+ .search {
+  font-size: 18px;
+ }
