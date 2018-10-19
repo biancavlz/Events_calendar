@@ -1,0 +1,13 @@
+<h1>Events</h1>
+
+<%= form_for "", url: root_path, role: "search", method: :get do %>
+  <%= text_field_tag :search, @search_term, placeholder: "Search an event" %>
+<% end %>
+
+<% @events.each do |event| %>
+  <p><%= event[:title] %></p>
+  <p><%= event[:date] %></p>
+  <p><%= event[:information] %></p>
+  <p><%= event[:place] %></p>
+  <p><%= event[:source] %></p>
+<% end %>
