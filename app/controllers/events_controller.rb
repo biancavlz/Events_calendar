@@ -34,7 +34,7 @@ class EventsController < ApplicationController
       event = Event.find_or_initialize_by(title: title)
 
       event.title       = entry.css('a span').text.capitalize
-      event.date        = Date.parse(entry.css('a').text, "%a, %Y-%m-%d")
+      event.date        = entry.css('a').text
       event.information = entry.css('p span').text
       event.place       = entry.css('p span b').text.capitalize
       event.source      = 'http://berghain.de/events/' #hardcode remove
@@ -52,7 +52,7 @@ class EventsController < ApplicationController
       event = Event.find_or_initialize_by(title: title)
       
       event.title       = entry.css('div.article-title').text.capitalize
-      event.date        = entry.css('span.article-date').text
+      event.date        = entry.css('span.article-date').text.split[0].gsub("/", " ")
       event.information = entry.css('div.article-text').text
       event.place       = 'C/O Berlin'
       event.source      = 'https://www.co-berlin.org/en/calender'
