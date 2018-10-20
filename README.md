@@ -1,24 +1,30 @@
-# README
+# Events Calendar
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is basic events calendar, this application gets events information from diferent sources and the application interface allows you to search for a specific Event.
 
-Things you may want to cover:
+## All you need in order to run this small application:
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Install Rails 
+```
+$ gem install rails -v 5.2.1
+```
+## Clone the repo 
+```
+$ git clone git@github.com:biancavlz/Events_calendar.git
+```
+## Bundle install
+```
+$ bundle install
+```
+## Run migrations
+```
+$ rails db:migrate
+```
+## Run the rails server
+```
+$ rails s
+```
+## Open your browser 
+```
+localhost:3000
+```
