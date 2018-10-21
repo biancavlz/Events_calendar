@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
   def index
     events_scraper
-    @events = Event.all
+    @events = Event.page(params[:page]).per(10)
 
     if params[:search]
       @search_term = params[:search]
