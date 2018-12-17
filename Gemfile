@@ -24,6 +24,8 @@ gem 'nokogiri'
 gem 'bootstrap'
 gem 'jquery-rails'
 gem 'kaminari'
+gem "rack", ">= 2.0.6"
+gem "loofah", ">= 2.2.3"
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password

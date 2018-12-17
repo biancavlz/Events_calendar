@@ -37,7 +37,7 @@ class EventsController < ApplicationController
       event.date        = Date.parse(entry.css('a').text, "%a, %Y-%m-%d")
       event.information = entry.css('p span').text
       event.place       = entry.css('p span b').text.capitalize
-      event.source      = 'http://berghain.de/events/' #hardcode remove
+      event.source      = 'http://berghain.de/events/'
       event.save!
       
       @event_entries << event
